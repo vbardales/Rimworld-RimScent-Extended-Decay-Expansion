@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- spoiled food -->
+  <RimScentExtended_Scent_RottenFood.stages.spoiled_food.label>nourriture avariée</RimScentExtended_Scent_RottenFood.stages.spoiled_food.label>
+  <!-- Something in the stores has turned. Sweet, sour and unmistakably off. -->
+  <RimScentExtended_Scent_RottenFood.stages.spoiled_food.description>Quelque chose a tourné dans les réserves. Sucré, aigre, et sans le moindre doute avarié.</RimScentExtended_Scent_RottenFood.stages.spoiled_food.description>
+
+</LanguageData>

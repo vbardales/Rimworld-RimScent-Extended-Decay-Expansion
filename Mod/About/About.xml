@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RimScent Extended: Decay Expansion</name>
+	<author>nelim</author>
+	<packageId>nelim.rimscent.extended.decay</packageId>
+	<description>The dead, the spoiled, and the room where someone is sick.
+
+RimScent scents the bile puddle a corpse leaves behind — but never the corpse. In a mod about smell, that is the most conspicuous gap in the base game.
+
+CORPSES, GRADED BY ROT
+- Fresh: the smell of death, faint but unmistakable.
+- Rotting: the stench of carrion, and it is bad.
+- Dessicated: dry remains. Much weaker — there is little left to smell.
+
+A buried corpse smells of nothing, and a mechanoid carcass never rots, so neither is touched. A corpse in a freezer is muted by the temperature mechanic in the socle: refrigerating a pile of bodies genuinely helps.
+
+SPOILED FOOD, FROM EVERY MOD
+Not a single def is patched. The scan reads the rot stage of anything carrying a CompRottable, which covers the food of every mod installed — present and future — including ones that did not exist when this was written.
+
+THE SICKROOM
+Ten germ filth types from Communicable Diseases become the air of a sickroom. The germs themselves do not smell; a room full of them does.
+
+Six of those ten only exist when Diseases Overhauled is also installed — Communicable Diseases creates them through a conditional patch of its own. The four that always exist are patched, the rest are tolerated without error.
+
+WHY IT NEEDS THE SOCLE
+Corpses and spoiled food are read in C#, not through defs: implied defs like Corpse_Muffalo are generated after all patch operations have run, so no xpath can ever reach them. The socle's scan already does that reading — it looks up these thoughts by name and stays silent if they are absent. This mod supplies them.
+
+Ships in English with a French translation injected on top. Communicable Diseases support loads only if that mod is active. No save data.
+
+Requires RimScent and RimScent Extended.</description>
+	<modVersion>0.1.0</modVersion>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>reo.RimScent</packageId>
+			<displayName>RimScent</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3645569466</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>nelim.rimscent.extended</packageId>
+			<displayName>RimScent Extended</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld</li>
+		<li>reo.RimScent</li>
+		<!-- Le socle lit les cadavres et la pourriture dans ScentScan et cherche ces
+		     pensees par leur nom : il faut passer apres lui. -->
+		<li>nelim.rimscent.extended</li>
+		<!-- Cas limite : six des dix saletes de germes sont elles-memes creees par un
+		     PatchOperationFindMod de Communicable Diseases conditionne a Diseases
+		     Overhauled. Elles n'existent qu'une fois son patch a lui passe. -->
+		<li>onegative.communicablediseases</li>
+	</loadAfter>
+</ModMetaData>

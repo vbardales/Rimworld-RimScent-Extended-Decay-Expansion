@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+	<v1.6>
+		<!-- Racine : About, et la pourriture, qui ne depend que du jeu de base. -->
+		<li>/</li>
+		<li IfModActive="onegative.communicablediseases">Diseases</li>
+	</v1.6>
+</loadFolders>

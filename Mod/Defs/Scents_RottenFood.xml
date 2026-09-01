@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Nourriture avariee. Aucun def n a besoin d etre patche : ScentScan lit
+       RottableUtility.GetRotStage() sur tout objet porteur d un CompRottable, donc
+       cela couvre les aliments de tous les mods installes, presents et futurs.
+       Le meme mecanisme que les cadavres, applique a ce qui se mange. -->
+  <ThoughtDef>
+    <defName>RimScentExtended_Scent_RottenFood</defName>
+    <durationDays>0.1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>spoiled food</label>
+        <description>Something in the stores has turned. Sweet, sour and unmistakably off.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
