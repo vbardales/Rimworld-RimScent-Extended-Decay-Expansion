@@ -1,92 +1,89 @@
 # RimScent Extended: Decay Expansion
 
-Les morts, l'avarié, les malades, et la pièce où ils sont couchés. RimWorld 1.6.
+The dead, the spoiled, the sick, and the room they are lying in. For RimWorld 1.6.
 
-## Les cadavres
+## Corpses
 
-RimScent parfume `Filth_CorpseBile`, la flaque — **mais pas le cadavre**. Dans un mod dont
-le sujet est l'odeur, c'est le trou le plus voyant du jeu de base.
+RimScent gives a scent to `Filth_CorpseBile`, the puddle — **but not to the corpse**. In a mod
+whose subject is smell, that is the most conspicuous gap in the base game.
 
-| Stade | Odeur | Humeur |
+| Stage | Smell | Mood |
 |---|---|---|
-| frais | odeur de mort | −3 |
-| en putréfaction | puanteur de charogne | −6 |
-| desséché | restes desséchés | −1 |
+| fresh | smell of death | −3 |
+| rotting | carrion stench | −6 |
+| dessicated | dried-out remains | −1 |
 
-Un cadavre enterré ne sent rien, et une carcasse de mécanoïde ne pourrit jamais : ni l'un ni
-l'autre n'est touché. Un cadavre en chambre froide est atténué par la mécanique de
-température du socle — réfrigérer un tas de corps sert donc réellement à quelque chose.
+A buried corpse smells of nothing, and a mechanoid hulk never rots: neither is touched. A corpse
+in a freezer is damped by the socle's temperature mechanic — so refrigerating a pile of bodies
+actually achieves something.
 
-## La nourriture avariée
+## Spoiled food
 
-**Aucun def n'est patché.** Le scan lit `RottableUtility.GetRotStage()` sur tout objet
-porteur d'un `CompRottable`, ce qui couvre les aliments de tous les mods installés — présents
-et futurs, y compris ceux qui n'existaient pas quand ceci a été écrit.
+**No def is patched.** The scan reads `RottableUtility.GetRotStage()` on any thing carrying a
+`CompRottable`, which covers food from every installed mod — present and future, including mods
+that did not exist when this was written.
 
-## La chambre de malade
+## The sickroom
 
-Dix saletés de germes de Communicable Diseases deviennent un air de chambre de malade, à −2.
-Les germes ne sentent pas ; une pièce qui en est pleine, si.
+Ten germ filth types from Communicable Diseases become sickroom air, at −2. Germs do not smell; a
+room full of them does.
 
-**Six des dix n'existent pas toujours.** Communicable Diseases ne les crée que par un
-`PatchOperationFindMod` conditionné à *Diseases Overhauled*. Les quatre qui existent
-toujours sont patchées, les autres sont tolérées sans erreur grâce au motif à prédicats
-disjoints.
+**Six of the ten do not always exist.** Communicable Diseases only creates them through a
+`PatchOperationFindMod` gated on *Diseases Overhauled*. The four that always exist are patched;
+the others are tolerated without error thanks to the disjoint-predicate pattern.
 
-La saleté de germes et le corps malade sont complémentaires : l'une est la pièce, l'autre est
-la personne. Les deux peuvent s'appliquer, le concours de dominance tranche.
+Germ filth and a sick body are complementary: one is the room, the other is the person. Both can
+apply, and the dominance contest settles it.
 
-## Les malades, et les morts qui marchent
+## The sick, and the walking dead
 
-C'est le seul bloc de ce mod qui **ne demande aucun code**. RimScent lit déjà les
-`HediffDef` d'un pion voisin — c'est même la *seule* chose qu'il lit sur un voisin. Un
-`modExtensions` sur la maladie suffit.
+This is the one block in this mod that **needs no code at all**. RimScent already reads the
+`HediffDef`s of a neighbouring pawn — it is in fact the *only* thing it reads on a neighbour. A
+`modExtensions` on the disease is enough.
 
-| Cible | Odeur | Humeur |
+| Target | Smell | Mood |
 |---|---|---|
-| grippe, peste, malaria, maladie du sommeil, maladie du nourrisson | fièvre : sueur aigre et souffle brûlant | −2 |
-| infection de plaie, pourriture pulmonaire, décomposition d'organe, pourriture du sang | infection : du pus, quelque chose qui tourne sous le pansement | −4 |
-| intoxication alimentaire | **réutilise** `RimScent_VomitScent` | |
-| shambler, corps qui se relève, cadavre éveillé (Anomaly) | **réutilise** notre odeur de charogne | |
+| flu, plague, malaria, sleeping sickness, infant illness | fever: sour sweat and hot breath | −2 |
+| wound infection, lung rot, organ decay, blood rot | infection: pus, something turning under the dressing | −4 |
+| food poisoning | **reuses** `RimScent_VomitScent` | |
+| shambler, revenant body, awoken corpse (Anomaly) | **reuses** our carrion scent | |
 
-Les variantes animales de la grippe et de la peste sont incluses : RimScent lit les hediffs
-de **n'importe quel** pion voisin, pas seulement des humains. Une bête malade sent aussi.
+The animal variants of flu and plague are included: RimScent reads the hediffs of **any**
+neighbouring pawn, not only humans. A sick beast smells too.
 
-Un shambler est un cadavre qui marche. Il sent donc exactement ce qu'il est, et réutilise
-l'odeur de charogne définie plus haut plutôt qu'une nouvelle écrite pour l'occasion.
+A shambler is a corpse that walks. It therefore smells of exactly what it is, reusing the carrion
+scent defined above rather than a new one written for the occasion.
 
-### On ne sent jamais sa propre maladie
+### You never smell your own illness
 
-RimScent teste `other != pawn` : un colon ne sent que la maladie **des autres**. C'est le
-comportement d'origine, et il tombe juste — on s'habitue à sa propre odeur avant toutes les
-autres.
+RimScent tests `other != pawn`: a colonist only smells **other people's** disease. That is the
+original behaviour, and it is right — you get used to your own smell before any other.
 
-### Ce qui ne sent volontairement rien
+### What deliberately smells of nothing
 
-Les parasites intestinaux, les parasites musculaires et les mécanites. Rien de tout cela ne
-se sent de l'extérieur, et leur inventer une odeur serait du bruit.
+Gut worms, muscle parasites and mechanites. None of that is detectable from outside, and inventing
+a smell for them would be noise.
 
-La perte de sang non plus : le sang répandu est déjà une saleté couverte ailleurs, et
-ajouter le hediff ferait compter deux fois la même situation dans le concours de dominance.
+Blood loss either: spilled blood is already a filth type covered elsewhere, and adding the hediff
+would count the same situation twice in the dominance contest.
 
-## Pourquoi le socle est requis
+## Why the socle is required
 
-Les cadavres et la pourriture sont lus **en C#**, pas par des defs. Les defs implicites
-(`Corpse_Muffalo`, `Meat_Muffalo`…) sont générés *après* que toutes les opérations de patch
-ont tourné : aucun xpath ne peut les atteindre. Le scan du socle fait déjà cette lecture — il
-cherche ces pensées par leur nom, avec `GetNamedSilentFail`, et reste muet si elles sont
-absentes. Ce mod les fournit.
+Corpses and rot are read **in C#**, not through defs. Implicit defs (`Corpse_Muffalo`,
+`Meat_Muffalo`…) are generated *after* every patch operation has run: no xpath can reach them. The
+socle's scan already does that reading — it looks these thoughts up by name, with
+`GetNamedSilentFail`, and stays quiet if they are absent. This mod supplies them.
 
-Conséquence pratique : le socle seul sait *lire* la pourriture mais n'a rien à en dire ; ce
-mod seul aurait le vocabulaire mais pas la lecture. Il faut les deux.
+The practical consequence: the socle alone knows how to *read* rot but has nothing to say about
+it; this mod alone would have the vocabulary but not the reading. You need both.
 
-## Dépendances
+## Requirements
 
 - [RimScent](https://steamcommunity.com/sharedfiles/filedetails/?id=3645569466)
-- RimScent Extended (le socle)
+- RimScent Extended (the socle)
 
-Communicable Diseases n'est pas requis. Rien n'est écrit dans la sauvegarde.
+Communicable Diseases is not required. Nothing is written to the save.
 
 ## Licence
 
-MIT — voir [LICENSE](LICENSE) et [ATTRIBUTION.md](ATTRIBUTION.md).
+MIT — see [LICENSE](LICENSE) and [ATTRIBUTION.md](ATTRIBUTION.md).
