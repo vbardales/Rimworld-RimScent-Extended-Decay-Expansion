@@ -3,7 +3,7 @@
 	<name>RimScent Extended: Decay Expansion</name>
 	<author>nelim</author>
 	<packageId>nelim.rimscent.extended.decay</packageId>
-	<description>The dead, the spoiled, and the room where someone is sick.
+	<description>The dead, the spoiled, the sick, and the room they are lying in.
 
 RimScent scents the bile puddle a corpse leaves behind — but never the corpse. In a mod about smell, that is the most conspicuous gap in the base game.
 
@@ -17,10 +17,24 @@ A buried corpse smells of nothing, and a mechanoid carcass never rots, so neithe
 SPOILED FOOD, FROM EVERY MOD
 Not a single def is patched. The scan reads the rot stage of anything carrying a CompRottable, which covers the food of every mod installed — present and future — including ones that did not exist when this was written.
 
+THE SICK, AND THE WALKING DEAD
+RimScent reads a neighbouring pawn's hediffs — in fact that is the ONLY thing it reads on a neighbour. So illness needs no code at all, only a patch.
+
+- Fever: sour sweat and hot breath, from flu, plague, malaria and sleeping sickness. The animal variants are included, because RimScent reads the hediffs of any neighbouring pawn, not only humans — a sick beast smells too.
+- Infection: pus and something turning under the bandage. Wound infection, lung rot, organ decay, and Royalty's blood rot, which are all literally putrefaction inside a living body.
+- Food poisoning reuses RimScent's own vomit thought rather than adding another.
+- Anomaly's shamblers, risen and awoken corpses reuse the rotting-corpse smell from above. A shambler is a corpse that walks: it smells like exactly what it is.
+
+A colonist never smells their OWN illness, only other people's — RimScent tests that the pawn is someone else. That is its original behaviour and it happens to be right: you adapt to your own smell before any other.
+
+Gut worms, muscle parasites and mechanites deliberately have no smell. None of that is detectable from outside.
+
 THE SICKROOM
 Ten germ filth types from Communicable Diseases become the air of a sickroom. The germs themselves do not smell; a room full of them does.
 
 Six of those ten only exist when Diseases Overhauled is also installed — Communicable Diseases creates them through a conditional patch of its own. The four that always exist are patched, the rest are tolerated without error.
+
+The germ filth and the sick body are complementary: one is the room, the other is the person. Both can apply, and the dominance contest sorts it out.
 
 WHY IT NEEDS THE SOCLE
 Corpses and spoiled food are read in C#, not through defs: implied defs like Corpse_Muffalo are generated after all patch operations have run, so no xpath can ever reach them. The socle's scan already does that reading — it looks up these thoughts by name and stays silent if they are absent. This mod supplies them.
@@ -28,7 +42,7 @@ Corpses and spoiled food are read in C#, not through defs: implied defs like Cor
 Ships in English with a French translation injected on top. Communicable Diseases support loads only if that mod is active. No save data.
 
 Requires RimScent and RimScent Extended.</description>
-	<modVersion>0.1.0</modVersion>
+	<modVersion>0.2.0</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>

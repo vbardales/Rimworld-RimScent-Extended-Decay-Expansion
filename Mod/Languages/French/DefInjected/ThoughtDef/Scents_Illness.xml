@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- EN: fever -->
+  <RimScentExtended_Scent_Fever.stages.fever.label>fièvre</RimScentExtended_Scent_Fever.stages.fever.label>
+  <!-- EN: Sour sweat and hot breath. Somebody here is running a fever, and you can smell it before you can see it. -->
+  <RimScentExtended_Scent_Fever.stages.fever.description>De la sueur aigre et un souffle brûlant. Quelqu'un ici a de la fièvre, et ça se sent avant que ça se voie.</RimScentExtended_Scent_Fever.stages.fever.description>
+
+  <!-- EN: infection -->
+  <RimScentExtended_Scent_Infection.stages.infection.label>infection</RimScentExtended_Scent_Infection.stages.infection.label>
+  <!-- EN: Pus and something turning underneath the bandage. Sweetish, and it does not belong on a living body. -->
+  <RimScentExtended_Scent_Infection.stages.infection.description>Du pus, et quelque chose qui tourne sous le pansement. Douceâtre, et ça n'a rien à faire sur un corps vivant.</RimScentExtended_Scent_Infection.stages.infection.description>
+
+</LanguageData>
