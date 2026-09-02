@@ -2,20 +2,20 @@
 
 ## RimScent
 
-par **reo / ocarina0001** — MIT.
+by **reo / ocarina0001** — MIT.
 [Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3645569466)
 
-Mod compagnon, pas un fork. Aucun fichier de RimScent n'est copié ni redistribué. Il est
-déclaré en dépendance dure et on utilise `RimScentReworked.ModExtension_Scent`, son propre
-point d'extension public.
+A companion mod, not a fork. No file from RimScent is copied or redistributed. It is
+declared as a hard dependency, and we use `RimScentReworked.ModExtension_Scent`, its own
+public extension point.
 
-## Mods lus par cette extension
+## Mods read by this expansion
 
-Rien n'en est copié. Visé uniquement par des `PatchOperation`, dans un dossier qui ne se
-charge que si le mod est actif :
+Nothing is copied from them. They are targeted only by `PatchOperation`s, in a folder that
+loads only if the mod is active:
 
-- **Communicable Diseases** (`onegative.communicablediseases`) — les saletés de germes.
+- **Communicable Diseases** (`onegative.communicablediseases`) — the germ filth types.
 
-## Ce mod
+## This mod
 
-MIT, © nelim. Defs, patchs et traductions sont un travail original.
+MIT, © nelim. Defs, patches and translations are original work.
