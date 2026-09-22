@@ -16,7 +16,7 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: never seen running; scent application, French display and logs remain unverified in RimWorld 1.6
+  - unverified: minimal English WSL Pickle pass is planned; French display and optional Communicable Diseases integration remain unverified
 session:      maj:        2026-09-22, offline test gate established
 updated:      2026-09-22, offline test gate established
 ---
@@ -114,6 +114,14 @@ distributed source link was checked. `TESTING.md` records the functional scope a
 Pickle scenario applies: this repository owns no executable callback, UI, settings, persistence or
 game-side behaviour beyond its XML declarations. Runtime integration evidence remains explicitly
 unverified for `done → tested`.
+
+## Runtime test preparation
+
+2026-09-22 — added a development-only Pickle companion with a minimal English scenario covering
+all seven owned `ThoughtDef`s and a clean log under the hard dependency set. The optional
+Communicable Diseases Workshop item is `3263015203`, but it has been removed from Steam and is not
+available in this workspace; that pass remains unverified. The shared WSL launcher and queue are
+used for the minimal pass.
 
 ## Prepublication preparation
 
