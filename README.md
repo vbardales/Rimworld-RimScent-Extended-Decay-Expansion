@@ -9,7 +9,7 @@ whose subject is smell, that is the most conspicuous gap in the base game.
 
 | Stage | Smell | Mood |
 |---|---|---|
-| fresh | smell of death | −3 |
+| fresh | smell of death | −2 |
 | rotting | carrion stench | −6 |
 | dessicated | dried-out remains | −1 |
 

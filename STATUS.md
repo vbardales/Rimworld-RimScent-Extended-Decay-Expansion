@@ -16,7 +16,6 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - defect: README.md says the fresh-corpse thought is -3, but the delivered Def is -2
   - unverified: never seen running; scent application, French display and logs remain unverified in RimWorld 1.6
 session:      maj:        2026-09-22, offline test gate established
 updated:      2026-09-22, offline test gate established
@@ -90,8 +89,9 @@ are readable, the Preview is a RimWorld-style overhead scene with distinct amber
 no concrete visual defect was observed. The Preview transition evidence is retained independently.
 
 Confirmed documentation defect: README's corpse table promises fresh-corpse mood −3 while
-`Mod/Defs/Scents_Corpses.xml` delivers −2. No feature, image, test, publication, repository or
-runtime change was made by this audit.
+`Mod/Defs/Scents_Corpses.xml` delivers −2. Corrected on 2026-09-22; `Tests/Test-Xml.ps1` now
+asserts every owned mood effect. No feature, image, publication, repository or runtime change was
+made by this audit.
 
 ## preTest gate
 

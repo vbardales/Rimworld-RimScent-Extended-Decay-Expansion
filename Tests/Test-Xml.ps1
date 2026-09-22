@@ -40,6 +40,23 @@ $actualThoughtInventory = @($thoughtNames | Sort-Object) -join ','
 $expectedThoughtInventory = @($expectedThoughts | Sort-Object) -join ','
 Assert-True ($actualThoughtInventory -eq $expectedThoughtInventory) 'Owned scent thought inventory changed.'
 
+$expectedMoodEffects = @{
+    RimScentExtended_Scent_CorpseFresh      = '-2'
+    RimScentExtended_Scent_CorpseRotting    = '-6'
+    RimScentExtended_Scent_CorpseDessicated = '-1'
+    RimScentExtended_Scent_Fever            = '-2'
+    RimScentExtended_Scent_Infection        = '-4'
+    RimScentExtended_Scent_RottenFood       = '-4'
+    RimScentExtended_Scent_Sickroom         = '-2'
+}
+foreach ($path in $thoughtFiles) {
+    $thoughtDocument = Read-Xml $path
+    foreach ($thought in @($thoughtDocument.Defs.ThoughtDef | Where-Object { $_.defName })) {
+        Assert-True ($expectedMoodEffects.ContainsKey($thought.defName)) "Unexpected concrete thought: $($thought.defName)."
+        Assert-True ($thought.stages.li.baseMoodEffect -eq $expectedMoodEffects[$thought.defName]) "Unexpected mood effect for $($thought.defName)."
+    }
+}
+
 $patchThoughts = Select-String -Path (Join-Path $root 'Mod/Patches/Illness.xml'), (Join-Path $root 'Mod/Diseases/Patches/Diseases.xml') -Pattern '<thought>([^<]+)</thought>' |
     ForEach-Object { $_.Matches.Groups[1].Value }
 $missingOwnedReferences = $patchThoughts | Where-Object { $_ -like 'RimScentExtended_*' -and $_ -notin $thoughtNames }
