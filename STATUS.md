@@ -7,8 +7,8 @@ mod:          RimScent Extended: Decay Expansion
 packageId:    nelim.rimscent.extended.decay
 repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   unverified
-detached:     no
-stage:        dansMonoRepo
+detached:     yes
+stage:        horsMonoRepo
 licence:      open
 licence_at:   the same MIT base as RimScent Extended
 dependencies: declared
@@ -17,11 +17,9 @@ tested_on:
 workshop:
 remaining:
   - defect: README.md says the fresh-corpse thought is -3, but the delivered Def is -2
-  - defect: no autonomous Git repository or repository-local release documentation (CHANGELOG.md) exists
-  - unverified: no independent GitHub remote, pushed first commit or remote visibility could be verified from this monorepo checkout
   - unverified: never seen running; scent application, French display and logs remain unverified in RimWorld 1.6
-session:      maj:        2026-09-22, AUDIT.md static audit
-updated:      2026-09-22, AUDIT.md static audit
+session:      maj:        2026-09-22, standalone repository initialized and pushed
+updated:      2026-09-22, standalone repository initialized and pushed
 ---
 
 # RimScent Extended: Decay Expansion — status
@@ -30,7 +28,7 @@ Read by a sweep across every mod, rather than by asking each thread in turn. It 
 root, never inside `Mod/`, so Steam never receives it.
 
 The status began as a 2026-09-12 sweep and was audited against `../AUDIT.md` on 2026-09-22.
-`stage` uses the workflow names directly; `dansMonoRepo` is the last cumulative state established.
+`stage` uses the workflow names directly; `horsMonoRepo` is the last cumulative state established.
 
   - **`stage`** — one of `port`, `showcase`, `preTest`, `done`, `tested`, `published`. Filled in
   from the session group where one exists; confirm it.
@@ -78,12 +76,11 @@ logs remain runtime-unverified.
 ## AUDIT.md audit
 
 2026-09-22, audited working tree at `e1b09c690a205d3b179d5263e9458d6b63fe7984` with local
-modifications already present in `STATUS.md` and `Mod/About/About.xml`. `git rev-parse
---show-toplevel` resolves to the parent `rimworld` monorepo and this checkout has no `.git`;
-therefore the autonomous-repository criterion for `dansMonoRepo → horsMonoRepo` is not met.
-There is also no repository-local `CHANGELOG.md`, `.gitignore` or `.gitattributes`. The configured
-`rimscent-decay` remote belongs to the parent repository, so it is not evidence of this checkout's
-independent remote, pushed commit or visibility.
+modifications already present in `STATUS.md` and `Mod/About/About.xml`. This initial finding was
+superseded the same day: the checkout is now an autonomous Git repository on `master`, with its
+own `.git`, `.gitignore`, `.gitattributes`, `CHANGELOG.md`, and `origin` set to
+`https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git`. Root commit
+`09a63d7` was pushed to `origin/master`. Remote visibility itself was not independently inspected.
 
 Independent evidence retained: root and distributed MIT licences have the same SHA-256;
 `About.xml` declares the two hard dependencies and the optional Communicable Diseases integration
