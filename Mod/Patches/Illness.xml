@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- La maladie se patche nativement : RimScent lit les HediffDef d'un pion voisin, et
+       c'est meme la seule chose qu'il lit sur un voisin. Aucun code n'est necessaire.
+
+       Aucun MayRequire : une operation conditionnelle dont le xpath ne correspond a rien
+       ne fait rien et ne leve aucune erreur. BloodRot (Royalty), InfantIllness (Biotech)
+       et les revenants d'Anomaly sont donc vises directement, et le mod fonctionne sans
+       les DLC. -->
+
+  <!-- Fievre. Les variantes animales sont incluses : RimScent lit les hediffs de
+       n'importe quel pion voisin, pas seulement des humains, donc une bete malade
+       sent aussi. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="Flu" or defName="Plague" or defName="Malaria" or defName="SleepingSickness" or defName="Animal_Flu" or defName="Animal_Plague" or defName="InfantIllness") and modExtensions]/modExtensions</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="Flu" or defName="Plague" or defName="Malaria" or defName="SleepingSickness" or defName="Animal_Flu" or defName="Animal_Plague" or defName="InfantIllness") and modExtensions]/modExtensions</xpath>
+      <value>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScentExtended_Scent_Fever</thought>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="Flu" or defName="Plague" or defName="Malaria" or defName="SleepingSickness" or defName="Animal_Flu" or defName="Animal_Plague" or defName="InfantIllness") and not(modExtensions)]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="Flu" or defName="Plague" or defName="Malaria" or defName="SleepingSickness" or defName="Animal_Flu" or defName="Animal_Plague" or defName="InfantIllness") and not(modExtensions)]</xpath>
+      <value>
+        <modExtensions>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScentExtended_Scent_Fever</thought>
+        </li>
+        </modExtensions>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Infection et necrose. LungRot et OrganDecay sont litteralement de la
+       putrefaction dans un corps vivant, BloodRot de Royalty aussi. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="WoundInfection" or defName="LungRot" or defName="OrganDecay" or defName="BloodRot") and modExtensions]/modExtensions</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="WoundInfection" or defName="LungRot" or defName="OrganDecay" or defName="BloodRot") and modExtensions]/modExtensions</xpath>
+      <value>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScentExtended_Scent_Infection</thought>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="WoundInfection" or defName="LungRot" or defName="OrganDecay" or defName="BloodRot") and not(modExtensions)]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="WoundInfection" or defName="LungRot" or defName="OrganDecay" or defName="BloodRot") and not(modExtensions)]</xpath>
+      <value>
+        <modExtensions>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScentExtended_Scent_Infection</thought>
+        </li>
+        </modExtensions>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Intoxication alimentaire : c'est du vomi, et RimScent a deja ecrit l'odeur
+       pour la salete correspondante. On cite sa pensee plutot que d'en ajouter une. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="FoodPoisoning") and modExtensions]/modExtensions</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="FoodPoisoning") and modExtensions]/modExtensions</xpath>
+      <value>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScent_VomitScent</thought>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="FoodPoisoning") and not(modExtensions)]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="FoodPoisoning") and not(modExtensions)]</xpath>
+      <value>
+        <modExtensions>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScent_VomitScent</thought>
+        </li>
+        </modExtensions>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Les revenants d'Anomaly. Un shambler est un cadavre qui marche : il sent
+       exactement ce qu'il est, donc on reutilise notre propre odeur de charogne
+       plutot que d'en inventer une pour l'occasion. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="Shambler" or defName="Rising" or defName="AwokenCorpse") and modExtensions]/modExtensions</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="Shambler" or defName="Rising" or defName="AwokenCorpse") and modExtensions]/modExtensions</xpath>
+      <value>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScentExtended_Scent_CorpseRotting</thought>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/HediffDef[(defName="Shambler" or defName="Rising" or defName="AwokenCorpse") and not(modExtensions)]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/HediffDef[(defName="Shambler" or defName="Rising" or defName="AwokenCorpse") and not(modExtensions)]</xpath>
+      <value>
+        <modExtensions>
+        <li Class="RimScentReworked.ModExtension_Scent">
+          <thought>RimScentExtended_Scent_CorpseRotting</thought>
+        </li>
+        </modExtensions>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>
