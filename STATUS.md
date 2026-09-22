@@ -8,7 +8,7 @@ packageId:    nelim.rimscent.extended.decay
 repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   unverified
 detached:     yes
-stage:        horsMonoRepo
+stage:        done
 licence:      open
 licence_at:   the same MIT base as RimScent Extended
 dependencies: declared
@@ -18,8 +18,8 @@ workshop:
 remaining:
   - defect: README.md says the fresh-corpse thought is -3, but the delivered Def is -2
   - unverified: never seen running; scent application, French display and logs remain unverified in RimWorld 1.6
-session:      maj:        2026-09-22, standalone repository initialized and pushed
-updated:      2026-09-22, standalone repository initialized and pushed
+session:      maj:        2026-09-22, offline test gate established
+updated:      2026-09-22, offline test gate established
 ---
 
 # RimScent Extended: Decay Expansion — status
@@ -92,3 +92,25 @@ no concrete visual defect was observed. The Preview transition evidence is retai
 Confirmed documentation defect: README's corpse table promises fresh-corpse mood −3 while
 `Mod/Defs/Scents_Corpses.xml` delivers −2. No feature, image, test, publication, repository or
 runtime change was made by this audit.
+
+## preTest gate
+
+2026-09-22 — the cumulative `horsMonoRepo → ModIcon generated → Preview generated → preOptions
+→ options → l10n → preTest` transitions are established from direct artifacts and static checks.
+The icon and Preview were opened; the Preview has distinct amber and blue accents, English
+description, and a final source-code link. The name is semantically styled as `Extended` plus its
+`Decay Expansion` title, without an inapplicable unofficial/prohibited marker. Settings are
+`not_applicable`; all owned player-facing thought text has English source and French coverage.
+The two hard dependencies are declared in `About.xml`; Communicable Diseases is optional and its
+folder is `IfModActive`-gated. This did not certify runtime behaviour; the following `done` gate
+records the applicable offline proof.
+
+## done gate
+
+2026-09-22 — `Tests/Test-Xml.ps1` passed: 12 distributed XML files parsed, the seven owned scent
+thoughts and their patch references resolved, 14 French entries covered all owned thought text,
+the two hard dependencies and optional Communicable Diseases condition were asserted, and the
+distributed source link was checked. `TESTING.md` records the functional scope and explains why no
+Pickle scenario applies: this repository owns no executable callback, UI, settings, persistence or
+game-side behaviour beyond its XML declarations. Runtime integration evidence remains explicitly
+unverified for `done → tested`.
