@@ -114,3 +114,10 @@ distributed source link was checked. `TESTING.md` records the functional scope a
 Pickle scenario applies: this repository owns no executable callback, UI, settings, persistence or
 game-side behaviour beyond its XML declarations. Runtime integration evidence remains explicitly
 unverified for `done → tested`.
+
+## Prepublication preparation
+
+2026-09-22 — `PUBLICATION.md` records the declared dependency/DLC split and the publication facts
+that remain unresolved without inventing them: artwork provenance, optional integration Workshop
+identifier, final screenshot order, Steam adult-content answers and collection-wide comment status.
+It is preparation only; the current stage remains `done` pending runtime validation.
