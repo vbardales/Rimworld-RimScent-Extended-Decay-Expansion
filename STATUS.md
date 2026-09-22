@@ -16,7 +16,7 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: minimal English WSL Pickle pass is planned; French display and optional Communicable Diseases integration remain unverified
+  - unverified: minimal English WSL Pickle pass queued at 2026-09-22 23:18 CEST; French display and optional Communicable Diseases integration remain unverified
 session:      maj:        2026-09-22, offline test gate established
 updated:      2026-09-22, offline test gate established
 ---
