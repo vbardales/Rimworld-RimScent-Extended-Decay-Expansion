@@ -18,9 +18,9 @@ workshop:
 remaining:
   - unverified: a fresh correctly staged English Pickle pass; the 2026-09-26 ticket ran Joy Rescue instead and is invalid for this mod
   - unverified: French display and optional Communicable Diseases integration
-  - unverified: claimed Workshop prepublication; no PublishedFileId.txt is present in this checkout
-session:      audit:      2026-09-26, runtime evidence and prepublication rechecked
-updated:      2026-09-26, runtime evidence and prepublication rechecked
+  - unverified: Workshop publication has not started
+session:      audit:      2026-09-26, runtime evidence and publication state rechecked
+updated:      2026-09-26, runtime evidence and publication state rechecked
 ---
 
 # RimScent Extended: Decay Expansion — status
@@ -140,7 +140,7 @@ that remain unresolved without inventing them: artwork provenance, optional inte
 identifier, final screenshot order, Steam adult-content answers and collection-wide comment status.
 It is preparation only; the current stage remains `done` pending runtime validation.
 
-2026-09-26 — no `Mod/About/PublishedFileId.txt` exists in the working tree or Git history, so a
-possible Workshop upload cannot be established from this checkout. `CHANGELOG.md` now reserves
-the requested 0.1.0 prepublication entry, but the stage remains `done` until the publication
-identifier and the runtime gate are evidenced.
+2026-09-26 — the owner confirmed that no prepublication occurred. No
+`Mod/About/PublishedFileId.txt` exists in the working tree or Git history, and `CHANGELOG.md`
+therefore records no release. The stage remains `done` pending the runtime gate; publication has
+not started.
