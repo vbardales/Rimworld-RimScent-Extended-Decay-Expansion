@@ -4,3 +4,5 @@ Source/bin/
 .vs/
 .idea/
 *.user
+*.dds
+/Tests/Pickle/Evidence/
