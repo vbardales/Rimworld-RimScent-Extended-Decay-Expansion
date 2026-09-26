@@ -16,7 +16,7 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: a fresh correctly staged English Pickle pass; the 2026-09-26 ticket ran Joy Rescue instead and is invalid for this mod
+  - unverified: a fresh English Pickle pass; the 2026-09-26 staging failed before Pickle launched
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop publication has not started
 session:      audit:      2026-09-26, runtime evidence and publication state rechecked
@@ -126,8 +126,11 @@ available in this workspace; that pass remains unverified. The shared WSL launch
 used for the minimal pass.
 
 2026-09-26 — ticket `20260926-115016-908-ba88`, labelled for commit `b59e326`, returned launcher
-exit code 1 without a current Pickle report. Its retained `Player.log` showed the unrelated Joy
-Rescue `28-f11-addition-read.feature`, so it proves nothing about this mod and is recorded only in
+exit code 1 without a current Pickle report. The dispatcher had selected this mod, but its copy of
+Workshop Pickle `3791648678` failed during staging and subsequently had no `packageId`; the
+Workshop source itself currently declares `rimworks.pickle`. The `Player.log` in the shared report
+directory belonged to the preceding Joy Rescue run and was explicitly not interpreted. This failed
+attempt proves nothing about this mod and is recorded only in
 `docs/runs/2026-09-26-minimal-english-b59e326.md`. The raw evidence was removed after the compact
 summary. The `tested` admission requirements are now recorded in `TESTING.md`: no selected `@wip`,
 every selected conditional scenario completed successfully, all applicable automated scenarios

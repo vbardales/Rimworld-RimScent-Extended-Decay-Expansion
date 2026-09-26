@@ -6,7 +6,11 @@
 - Requested evidence directory: `Tests/Pickle/Evidence/minimal-english-b59e326`
 - Terminal launcher result: exit code `1`, with no current Pickle report.
 
-This is not evidence for RimScent Extended: Decay Expansion. The retained `Player.log` identified
-the launched filter as `28-f11-addition-read.feature` for Joy Rescue, rather than this mod's
-`01-minimal-load.feature`. The local report/log copy was deleted after this summary was written.
-A fresh, correctly staged dispatcher pass remains required before the `done -> tested` transition.
+This is not evidence for RimScent Extended: Decay Expansion. The dispatcher did select this mod,
+but staging failed before Pickle launched: the copy of Workshop Pickle `3791648678` was incomplete
+and consequently exposed no `packageId`. Its Workshop source currently has the expected
+`rimworks.pickle` metadata, so this is a transient staging failure, not an incorrect dependency
+declaration in the mod under test. The `Player.log` left in the shared report directory belonged to
+the preceding Joy Rescue run and was explicitly not interpreted. The local report/log copy was
+deleted after this summary was written. A fresh dispatcher pass remains required before the
+`done -> tested` transition.
