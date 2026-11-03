@@ -9,7 +9,7 @@ repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   public
 detached:     yes
 upstream_mod_remotes: N/A
-workflow_stage: declareDependencies[1.0.0]
+workflow_stage: settings[1.0.0]
 remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
 licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
@@ -25,7 +25,7 @@ remaining:
   - defect: desktop.ini and Mod/desktop.ini untracked
   - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0]
+updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0]
 protocols_read_sha: 58d71db9123abe259f95a2342927626ec858462b
 ---
 
@@ -157,3 +157,7 @@ not started.
 ## Duplicate check (1.a)
 
 2026-11-03: `scripts/Search-Workshop.sh` over the Workshop and local Mods (9,706 folders, 9,564 holding a searchable file) for About names containing RimScent, the `RimScentExtended_Scent_` defName prefix and the packageId `rimscent.extended.decay`. The only mods found are RimScent, its two official expansions and the author's own RimScent Extended family; the only Decay Expansion and the only owner of the Decay defNames is Workshop item 3811307723 (this mod). No equivalent mod exists.
+
+## Dependencies (4.g)
+
+2026-11-03, revision of this commit's parent `8d47d09` plus the `About.xml` fix below. Hard dependencies, both in `modDependencies`: RimScent `reo.RimScent` (Workshop 3645569466, owns `RimScentReworked.ModExtension_Scent`) and RimScent Extended `nelim.rimscent.extended` (Workshop 3811307392, reads corpses and rot in code and finds the owned thoughts by name). Optional integration: Communicable Diseases `onegative.communicablediseases`, loaded only through `IfModActive` on the `Diseases` folder, its patches are `PatchOperationConditional`, listed in `loadAfter` only. DLC: none required; BloodRot (Royalty), InfantIllness (Biotech) and Anomaly revenants are targeted by conditional xpath that does nothing without the DLC. `supportedVersions` is 1.6 only. `scripts/sort-load-order.py` on the three mods gives RimScent, RimScent Extended, this mod, no cycle. 4.a fix: RimScent Extended now carries its `steamWorkshopUrl` (it only had `downloadUrl`). 4.f not applicable: no animal added.
