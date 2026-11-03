@@ -8,9 +8,10 @@ Run from the repository root:
 powershell -ExecutionPolicy Bypass -File Tests/Test-Xml.ps1
 ```
 
-The test parses every distributed XML file and verifies the seven owned thought definitions,
-their patch references, all fourteen French `DefInjected` entries, the two hard dependencies,
-the optional Communicable Diseases LoadFolders condition, and the distributed repository link.
+The test verifies exact values only: the seven owned thought definitions and their mood effects,
+the `RimScent_VomitScent` reuse, the two hard dependencies, the optional Communicable Diseases
+LoadFolders condition, and the distributed repository link. XML parsing, def references and French
+coverage are checked by the shared `Check-ModBasics.ps1` and `Check-Translations.ps1`.
 
 ## Functional and Pickle scope
 
