@@ -23,8 +23,10 @@ remaining:
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
   - defect: desktop.ini and Mod/desktop.ini untracked
+  - defect: 2.e Art/Preview-source.png mean value 0.175 (rule: 0.30 or more), 2 hue families ok; source is the owner's, not touched
+  - open: 2.f untracked Art/Gallery, echo-concept.png, Preview.config.json, both .ico: not yet checked against the closed Art/ set
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, setupRepo complete, moved to makeSources
+updated:      2026-11-03, ModIcon.png regenerated from source (23,837 B, 128x128)
 protocols_read_sha: 2e5ab7ac86307bf3c840414a7d487c6a48c60ec1
 ---
 
