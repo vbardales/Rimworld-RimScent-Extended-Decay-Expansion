@@ -9,7 +9,7 @@ repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   public
 detached:     yes
 upstream_mod_remotes: N/A
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
 licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
@@ -24,8 +24,8 @@ remaining:
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
   - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, French review validated by Virginie; makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0]
-protocols_read_sha: 2be34b6232791a0a6ce54ea35c129cd03253fabc
+updated:      2026-11-03, French review validated by Virginie; makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0], then playTests[1.0.0]
+protocols_read_sha: 33e7ac18d79e34d9ea695791cd0d2623030d4e63
 ---
 
 # RimScent Extended: Decay Expansion — status
@@ -166,3 +166,7 @@ not started.
 2026-11-03, revision `ee034a5`. Inventory unchanged since 2026-09-22: seven owned `ThoughtDef`s, 14 player-facing texts (label and description each), all from XML defs, no C#, no Keyed call. `Check-Translations.ps1` passes (14 source texts, French coverage, no stale or duplicate key, no formatting token issue); `Check-DefInjected.ps1` resolves 14 keys, 0 errors, 39 patch operations applied. Every French text was read: no tu, vous or nous, no pawn-gendered agreement (the texts describe a smell, not a colonist), epicene by construction, so 6.d and 6.e do not apply. `FRENCH_REVIEW.md` generated at the repository root. French display, raw keys and fallback in game remain unverified until `playTests`.
 
 2026-11-03, 6.g: Virginie validated the French text after three ChatGPT passes (`/review-translation`), at revision `a254290`. Corrections applied from the passes: "de vieux os", "entrailles vidées", "Un cadavre gît", commas removed before "et" in three descriptions. The third pass found nothing. `translation_fr` is `complete`; in-game French display stays unverified until `playTests`.
+
+## writeTests record (7.a to 7.h)
+
+2026-11-03, tested revision `baf205790e22ca78165fb6c16f6d7a7e8883078b` (`Mod/` unchanged since `About.xml` fix of the dependencies commit). Exists: `TESTING.md` with nine functional scenarios S1 to S9 (corpse grades, immune traits, spoiled food, fever, infection, food poisoning, revenants, sickroom, French), `Tests/Test-Xml.ps1` (14 assertions: 7 mood values, 7 structural), one Pickle feature `01-minimal-load.feature` (loads every owned thought, no logged error). Ran now and green: `Test-Xml.ps1`, `Check-ModBasics.ps1` (12 XML files, 7 defs), `Check-Translations.ps1` (14 texts), `Check-DefInjected.ps1` (14 keys, 0 errors), `Check-Steps.ps1` (10 step lines resolve). Not applicable: unit tests (`Run-UnitTests.ps1` finds no test project, the mod ships no C#), settings. Not run yet: the Pickle feature, S1 to S9 behaviour in game, Communicable Diseases pass (Workshop item 3263015203 removed from Steam), all left to `playTests`.
