@@ -1,7 +1,8 @@
 # Publication preparation
 
-**Status: not ready to publish.** The repository is at `done`, not `tested`; this file prepares
-the information that must be settled before a first Workshop upload and does not authorize one.
+**Status: not ready to publish.** The repository is at `writeTests` for 1.0.0, not `tested`, and a hidden
+0.1.0 Workshop upload already exists; this file prepares the information that must be settled before
+the first public Workshop release and does not authorize one.
 
 ## Dependencies and DLC
 
