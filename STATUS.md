@@ -2,14 +2,14 @@
 settings_audit: not_applicable
 localization:   complete
 translation_en: complete
-translation_fr: unchecked
+translation_fr: partial
 mod:          RimScent Extended: Decay Expansion
 packageId:    nelim.rimscent.extended.decay
 repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   public
 detached:     yes
 upstream_mod_remotes: N/A
-workflow_stage: localize[1.0.0]
+workflow_stage: writeTests[1.0.0]
 remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
 licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
@@ -20,13 +20,13 @@ workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
   - unverified: a fresh English Pickle pass; the 2026-09-26 staging failed before Pickle launched
+  - unverified: 6.g Virginie's review of the French text (translation_fr stays partial until then)
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
-  - defect: desktop.ini and Mod/desktop.ini untracked
   - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0]
-protocols_read_sha: e0c927d0d1eaafa51ae7b91b601e8be2113cb080
+updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0]
+protocols_read_sha: 2be34b6232791a0a6ce54ea35c129cd03253fabc
 ---
 
 # RimScent Extended: Decay Expansion — status
@@ -161,3 +161,7 @@ not started.
 ## Dependencies (4.g)
 
 2026-11-03, revision of this commit's parent `8d47d09` plus the `About.xml` fix below. Hard dependencies, both in `modDependencies`: RimScent `reo.RimScent` (Workshop 3645569466, owns `RimScentReworked.ModExtension_Scent`) and RimScent Extended `nelim.rimscent.extended` (Workshop 3811307392, reads corpses and rot in code and finds the owned thoughts by name). Optional integration: Communicable Diseases `onegative.communicablediseases`, loaded only through `IfModActive` on the `Diseases` folder, its patches are `PatchOperationConditional`, listed in `loadAfter` only. DLC: none required; BloodRot (Royalty), InfantIllness (Biotech) and Anomaly revenants are targeted by conditional xpath that does nothing without the DLC. `supportedVersions` is 1.6 only. `scripts/sort-load-order.py` on the three mods gives RimScent, RimScent Extended, this mod, no cycle. 4.a fix: RimScent Extended now carries its `steamWorkshopUrl` (it only had `downloadUrl`). 4.f not applicable: no animal added.
+
+## Translation audit, localize replay (6.a to 6.h)
+
+2026-11-03, revision `ee034a5`. Inventory unchanged since 2026-09-22: seven owned `ThoughtDef`s, 14 player-facing texts (label and description each), all from XML defs, no C#, no Keyed call. `Check-Translations.ps1` passes (14 source texts, French coverage, no stale or duplicate key, no formatting token issue); `Check-DefInjected.ps1` resolves 14 keys, 0 errors, 39 patch operations applied. Every French text was read: no tu, vous or nous, no pawn-gendered agreement (the texts describe a smell, not a colonist), epicene by construction, so 6.d and 6.e do not apply. `FRENCH_REVIEW.md` generated at the repository root. French display, raw keys and fallback in game remain unverified until `playTests`.
