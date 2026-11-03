@@ -2,7 +2,7 @@
 settings_audit: not_applicable
 localization:   complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 mod:          RimScent Extended: Decay Expansion
 packageId:    nelim.rimscent.extended.decay
 repo:         Rimworld-RimScent-Extended-Decay-Expansion
@@ -20,12 +20,11 @@ workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
   - unverified: a fresh English Pickle pass; the 2026-09-26 staging failed before Pickle launched
-  - unverified: 6.g Virginie's review of the French text (translation_fr stays partial until then)
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
   - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0]
+updated:      2026-11-03, French review validated by Virginie; makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0]
 protocols_read_sha: 2be34b6232791a0a6ce54ea35c129cd03253fabc
 ---
 
@@ -165,3 +164,5 @@ not started.
 ## Translation audit, localize replay (6.a to 6.h)
 
 2026-11-03, revision `ee034a5`. Inventory unchanged since 2026-09-22: seven owned `ThoughtDef`s, 14 player-facing texts (label and description each), all from XML defs, no C#, no Keyed call. `Check-Translations.ps1` passes (14 source texts, French coverage, no stale or duplicate key, no formatting token issue); `Check-DefInjected.ps1` resolves 14 keys, 0 errors, 39 patch operations applied. Every French text was read: no tu, vous or nous, no pawn-gendered agreement (the texts describe a smell, not a colonist), epicene by construction, so 6.d and 6.e do not apply. `FRENCH_REVIEW.md` generated at the repository root. French display, raw keys and fallback in game remain unverified until `playTests`.
+
+2026-11-03, 6.g: Virginie validated the French text after three ChatGPT passes (`/review-translation`), at revision `a254290`. Corrections applied from the passes: "de vieux os", "entrailles vidées", "Un cadavre gît", commas removed before "et" in three descriptions. The third pass found nothing. `translation_fr` is `complete`; in-game French display stays unverified until `playTests`.
