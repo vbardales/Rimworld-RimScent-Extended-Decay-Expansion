@@ -9,7 +9,7 @@ repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   public
 detached:     yes
 upstream_mod_remotes: N/A
-workflow_stage: code[0.2.0]
+workflow_stage: declareDependencies[1.0.0]
 remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
 licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
@@ -25,8 +25,8 @@ remaining:
   - defect: desktop.ini and Mod/desktop.ini untracked
   - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]
-protocols_read_sha: 2e5ab7ac86307bf3c840414a7d487c6a48c60ec1
+updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0]
+protocols_read_sha: 58d71db9123abe259f95a2342927626ec858462b
 ---
 
 # RimScent Extended: Decay Expansion — status
