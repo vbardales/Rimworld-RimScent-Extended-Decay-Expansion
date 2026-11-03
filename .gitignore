@@ -6,3 +6,5 @@ Source/bin/
 *.user
 *.dds
 /Tests/Pickle/Evidence/
+
+/Art/.render/
