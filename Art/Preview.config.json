@@ -1,0 +1,31 @@
+{
+  "panel": {
+    "title": "RimScent Extended: Decay Expansion",
+    "titleSize": 36,
+    "titleParts": [
+        { "text": "RimScent" },
+        { "text": "Extended", "font": "ui", "scale": 0.56 },
+        { "text": "Decay Expansion", "breakBefore": true }
+    ],
+    "tagInline": true,
+    "copyLines": [
+        "Corpses, spoiled food and sickness",
+        "leave a smell behind."
+    ]
+  },
+  "backgroundFile": "Preview-source.png",
+  "echo": {
+    "file": "echo-concept.png",
+    "color": "var(--accent)"
+  },
+  "icon": {
+    "file": "ModIcon-source.png"
+  },
+  "palette": {
+    "veil": "#2F2920",
+    "inkPrimary": "#F0EADF",
+    "inkSecondary": "#B8A56B",
+    "accent": "#95A34E",
+    "badgeInk": "#15130E"
+  }
+}

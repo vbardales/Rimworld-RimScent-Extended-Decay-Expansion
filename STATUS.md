@@ -9,7 +9,7 @@ repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   public
 detached:     yes
 upstream_mod_remotes: N/A
-workflow_stage: makeSources
+workflow_stage: code[0.2.0]
 remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
 licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
@@ -23,10 +23,9 @@ remaining:
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
   - defect: desktop.ini and Mod/desktop.ini untracked
-  - defect: 2.e Art/Preview-source.png mean value 0.175 (rule: 0.30 or more), 2 hue families ok; source is the owner's, not touched
-  - open: 2.f untracked Art/Gallery, echo-concept.png, Preview.config.json, both .ico: not yet checked against the closed Art/ set
+  - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
-updated:      2026-11-03, ModIcon.png regenerated from source (23,837 B, 128x128)
+updated:      2026-11-03, makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]
 protocols_read_sha: 2e5ab7ac86307bf3c840414a7d487c6a48c60ec1
 ---
 
