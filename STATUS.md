@@ -12,7 +12,7 @@ upstream_mod_remotes: N/A
 workflow_stage: setupRepo
 remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
-licence_at:   the same MIT base as RimScent Extended
+licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
 dependencies: declared
 showcase:     complete
 tested_on:
