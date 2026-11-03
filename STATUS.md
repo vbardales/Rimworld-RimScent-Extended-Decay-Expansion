@@ -2,13 +2,14 @@
 settings_audit: not_applicable
 localization:   complete
 translation_en: complete
-translation_fr: complete
+translation_fr: unchecked
 mod:          RimScent Extended: Decay Expansion
 packageId:    nelim.rimscent.extended.decay
 repo:         Rimworld-RimScent-Extended-Decay-Expansion
 visibility:   unverified
 detached:     yes
-stage:        done
+workflow_stage: setupRepo
+remote:       https://github.com/vbardales/Rimworld-RimScent-Extended-Decay-Expansion.git
 licence:      open
 licence_at:   the same MIT base as RimScent Extended
 dependencies: declared
@@ -19,8 +20,12 @@ remaining:
   - unverified: a fresh English Pickle pass; the 2026-09-26 staging failed before Pickle launched
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop publication has not started
-session:      audit:      2026-09-26, runtime evidence and publication state rechecked
-updated:      2026-09-26, runtime evidence and publication state rechecked
+  - defect: 1.h front matter incomplete (upstream_mod_remotes absent, visibility 'unverified' while GitHub reports PUBLIC, no published field)
+  - defect: Mod/About/PublishedFileId.txt (3811307723) untracked, contradicts "never published"
+  - defect: Art/.render/ not in .gitignore (2.f); Mod/desktop.ini and desktop.ini untracked
+session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
+updated:      2026-11-03, replay-audit reset workflow_stage to setupRepo
+protocols_read_sha: a3b5d069797ec957f24675ce649233074e4dc92d
 ---
 
 # RimScent Extended: Decay Expansion — status
