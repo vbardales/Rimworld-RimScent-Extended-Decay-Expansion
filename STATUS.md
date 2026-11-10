@@ -21,7 +21,8 @@ workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
   - unverified: 8.c minimal-English run GREEN 2026-11-10 (ticket 20261110-192627-762-dee6, 1/1 passed, exitReason passed, revision 465d167); Inbox folder Tests/Pickle/Inbox/minimal-english still to minify into Evidence (Prune-Evidence.ps1); optional Communicable Diseases pass (8.f) and S1 to S9 (8.g) still open
-  - unverified: 8.f Communicable Diseases pass impossible (Workshop 3263015203 removed), 8.g/8.k S1 to S9 in game not scripted: owner decision needed on how to close them
+  - unverified: 8.g S1 to S5 scripted in Pickle (02-scents.feature, map wsl-deps.scents.map, ticket 20261110-205042-576-0479 queued, diagnostic); S6 (vomit thought reuse, offline only), S7 (Anomaly shambler, needs a step) and S9 (French, -Language French run) still to script or justify n/a with a written reason (Audit answer 2026-11-10: n/a never because scripting is work)
+  - n/a proposed: 8.f and S8 (Communicable Diseases 3263015203 removed from Steam; no folder 3263015203 in the local Workshop, nothing named Communicable in the game Mods folder, checked 2026-11-10): not mountable; the Diseases folder and Sickroom thought stay checked offline by Test-Xml.ps1
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
