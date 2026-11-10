@@ -16,11 +16,11 @@ licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and dis
 dependencies: declared
 showcase:     complete
 tested_on:     2026-11-10 pickle 465d167
+code_review_sha: f0e7be738bec6ad72c18e32b7c61385de8231823
 workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
   - unverified: 8.c minimal-English run GREEN 2026-11-10 (ticket 20261110-192627-762-dee6, 1/1 passed, exitReason passed, revision 465d167); Inbox folder Tests/Pickle/Inbox/minimal-english still to minify into Evidence (Prune-Evidence.ps1); optional Communicable Diseases pass (8.f) and S1 to S9 (8.g) still open
-  - unverified: 8.m code review not done (no code_review_sha); Opus sub-agent over the whole history, Mod/ is XML only
   - unverified: 8.f Communicable Diseases pass impossible (Workshop 3263015203 removed), 8.g/8.k S1 to S9 in game not scripted: owner decision needed on how to close them
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
