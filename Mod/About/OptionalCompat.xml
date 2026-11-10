@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OptionalCompat>
+	<li>
+		<packageId>onegative.communicablediseases</packageId>
+		<workshopId>3263015203</workshopId>
+		<kind>patch</kind>
+	</li>
+</OptionalCompat>
