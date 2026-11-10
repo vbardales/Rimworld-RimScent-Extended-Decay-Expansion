@@ -15,11 +15,11 @@ licence:      open
 licence_at:   "2026-09-22: MIT, the same base as RimScent Extended; root and distributed LICENSE have the same SHA-256"
 dependencies: declared
 showcase:     complete
-tested_on:
+tested_on:     2026-11-10 pickle 465d167
 workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
-  - unverified: 8.c first minimal-English run (ticket 20261103-104438-382-a28b) FAILED: Sickroom ThoughtDef lives in the conditional Diseases folder, absent from the minimal set (feature bug, not mod bug); feature fixed at 465d167, ticket 20261110-192627-762-dee6 queued (map wsl-deps.sans-facultatifs.map, evidence Tests/Pickle/Inbox/minimal-english); wait for RUN_DONE
+  - unverified: 8.c minimal-English run GREEN 2026-11-10 (ticket 20261110-192627-762-dee6, 1/1 passed, exitReason passed, revision 465d167); Inbox folder Tests/Pickle/Inbox/minimal-english still to minify into Evidence (Prune-Evidence.ps1); optional Communicable Diseases pass (8.f) and S1 to S9 (8.g) still open
   - unverified: 8.m code review not done (no code_review_sha); Opus sub-agent over the whole history, Mod/ is XML only
   - unverified: 8.f Communicable Diseases pass impossible (Workshop 3263015203 removed), 8.g/8.k S1 to S9 in game not scripted: owner decision needed on how to close them
   - defect: Preview rerender blocked 2026-11-10: Render-Preview.cjs refuses ModIcon-source.png (excessive transparent padding); uncommitted Art/Preview.config.json (new 5-key format) + Mod/About/Preview.png not mine; owner decision: trim icon margin or badge mode
