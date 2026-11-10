@@ -19,16 +19,16 @@ tested_on:
 workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
-  - unverified: 8.c Pickle ticket 20261103-104438-382-a28b queued (minimal English, map wsl-deps.sans-facultatifs.map, label revision a254290, evidence to Tests/Pickle/Inbox/minimal-english); wait for RUN_DONE
+  - unverified: 8.c first minimal-English run (ticket 20261103-104438-382-a28b) FAILED: Sickroom ThoughtDef lives in the conditional Diseases folder, absent from the minimal set (feature bug, not mod bug); feature fixed at 465d167, ticket 20261110-192627-762-dee6 queued (map wsl-deps.sans-facultatifs.map, evidence Tests/Pickle/Inbox/minimal-english); wait for RUN_DONE
   - unverified: 8.m code review not done (no code_review_sha); Opus sub-agent over the whole history, Mod/ is XML only
   - unverified: 8.f Communicable Diseases pass impossible (Workshop 3263015203 removed), 8.g/8.k S1 to S9 in game not scripted: owner decision needed on how to close them
-  - defect: Mod/About/Preview.png modified and uncommitted (old render), rerender at mountPreview
+  - defect: Preview rerender blocked 2026-11-10: Render-Preview.cjs refuses ModIcon-source.png (excessive transparent padding); uncommitted Art/Preview.config.json (new 5-key format) + Mod/About/Preview.png not mine; owner decision: trim icon margin or badge mode
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
   - defect: Mod/About/Preview.png and Art/Gallery/0-preview.png still built from the previous Preview-source (text panel baked in): rerender at mountPreview
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
 updated:      2026-11-03, playTests: ticket 20261103-104438-382-a28b queued; French review validated by Virginie; makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0], then playTests[1.0.0]
-protocols_read_sha: 33e7ac18d79e34d9ea695791cd0d2623030d4e63
+protocols_read_sha: 43ec7b3b86bbcac34e2876f4ce387daa9d91f5fc
 ---
 
 # RimScent Extended: Decay Expansion — status
