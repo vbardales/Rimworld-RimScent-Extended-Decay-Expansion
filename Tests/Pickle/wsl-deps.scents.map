@@ -1,0 +1,6 @@
+# Hard dependencies resolved for the minimal pass; no optional integrations are activated.
+reo.RimScent 3645569466
+nelim.rimscent.extended path:RimScentExtended/Mod
+# Scent scenarios S1 to S5: colonist steps of ColonistRace (corpse, rot, hediff, mood thought).
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
+nelim.pickletools path:PickleTools/Tests/Pickle/StandaloneBase/Mod
