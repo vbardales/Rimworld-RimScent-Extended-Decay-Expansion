@@ -3,7 +3,7 @@
 Development-only companion for RimScent Extended: Decay Expansion. It is never included in `Mod/`
 or uploaded to the Workshop.
 
-`01-minimal-load.feature` is the minimal hard-dependency pass. It verifies that the seven owned
+`01-minimal-load.feature` is the minimal hard-dependency pass. It verifies that the six unconditional owned
 thought definitions load in a real RimWorld process and that the load produces no errors. This is
 the runtime counterpart to the offline XML contract test; it does not claim to test RimWorld's
 dependency loader or RimScent's implementation.
