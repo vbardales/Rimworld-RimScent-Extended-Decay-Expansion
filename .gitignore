@@ -9,3 +9,5 @@ Source/bin/
 
 /Art/.render/
 desktop.ini
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
