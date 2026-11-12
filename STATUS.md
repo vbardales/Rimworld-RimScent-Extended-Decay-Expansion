@@ -21,13 +21,13 @@ workshop:     3811307723
 published:    yes, 0.1.0, hidden
 remaining:
   - unverified: 8.c minimal-English run GREEN 2026-11-10 (ticket 20261110-192627-762-dee6, 1/1 passed, exitReason passed, revision 465d167); Inbox folder Tests/Pickle/Inbox/minimal-english still to minify into Evidence (Prune-Evidence.ps1); optional Communicable Diseases pass (8.f) and S1 to S9 (8.g) still open
-  - unverified: 8.g S1 to S5 scripted in Pickle (02-scents.feature, map wsl-deps.scents.map, ticket 20261110-205042-576-0479 queued, diagnostic); S6 (vomit thought reuse, offline only), S7 (Anomaly shambler, needs a step) and S9 (French, -Language French run) still to script or justify n/a with a written reason (Audit answer 2026-11-10: n/a never because scripting is work)
+  - defect: 8.g S1 to S5 run 2026-11-10 (ticket 20261110-205042-576-0479, Inbox/scents-s1-s5): 1 passed (fresh corpse), 5 failed (rotting, dessicated, rotten food, fever, infection: thought absent on Larson after 600 ticks); cause not found by reading ScentScan.cs; rotting scenario replayed alone, ticket 20261112-143337-851-a926 (Inbox/s1-rotting-alone), to tell a state leak between scenarios from a real defect; S6 (vomit thought reuse, offline only), S7 (Anomaly shambler, needs a step) and S9 (French, -Language French run) still to script or justify n/a with a written reason (Audit answer 2026-11-10: n/a never because scripting is work)
   - n/a proposed: 8.f and S8 (Communicable Diseases 3263015203 removed from Steam; no folder 3263015203 in the local Workshop, nothing named Communicable in the game Mods folder, checked 2026-11-10): not mountable; the Diseases folder and Sickroom thought stay checked offline by Test-Xml.ps1
   - unverified: French display and optional Communicable Diseases integration
   - unverified: Workshop item 3811307723 published hidden at 0.1.0 (owner, 2026-11-03); visibility to public not yet done
 session:      audit:      2026-11-03, replay-audit reset workflow_stage to setupRepo
 updated:      2026-11-10, Preview rerendered in badge mode (f9f3837) and validated by Virginie; minimal English Pickle green (465d167); 2026-11-03, playTests: ticket 20261103-104438-382-a28b queued; French review validated by Virginie; makeSources complete (new Preview-source: text-free, 2 hue families, mean value 0.395), moved to code[0.2.0]; owner chose 1.0.0 as target, About modVersion and CHANGELOG [Unreleased] updated, moved to declareDependencies[1.0.0], then settings[1.0.0], then localize[1.0.0], then writeTests[1.0.0], then playTests[1.0.0]
-protocols_read_sha: 43ec7b3b86bbcac34e2876f4ce387daa9d91f5fc
+protocols_read_sha: 9481d090854f082b638e84ad647a202fec7de6d2
 ---
 
 # RimScent Extended: Decay Expansion — status
